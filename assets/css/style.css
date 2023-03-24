@@ -34,6 +34,7 @@ li {
     opacity: 90%;
     padding-left: 5px;
 }
+    
 
 .date {
     padding-left: 6px;
@@ -67,7 +68,7 @@ li {
     border-radius: 24px;
     border: 1px solid #fff;
     max-width: 550px;
-    margin-bottom: 169px;
+    margin-bottom: 9px;
 }
 
 .city-main {
@@ -109,6 +110,15 @@ a:link {
 
 a:hover {
     text-decoration: underline;
+}
+
+.source-code {
+    font-size: 90%;
+    font-weight: 400;
+    margin: 0 auto;
+    max-width: 550px;
+    text-align: left;
+    padding-bottom: 129px;
 }
 
 
