@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <!-- bootstrap link css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/8260b1bf46.js" crossorigin="anonymous"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat+Alternates:ital,wght@0,100;0,400;0,500;1,200;1,300&display=swap"
+        rel="stylesheet">
+
+    <!-- style css link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title> 🌸 Esther's Weather App</title>
+
+
+</head>
+
+
+
+<body>
+    <div class="container">
+
+        <!-- The form to submit a city starts here -->
+        <form class="search-form" id="form">
+            <div class="row">
+                <div class="col-6">
+                    <!-- input search field -->
+                    <input type="search" placeholder=" 🔍 Type a city" autofocus="on" autocomplete="off"
+                        class="form-control shadow-sm" id="city-input">
+                </div>
+                <!-- Search Button -->
+                <div class="col-3">
+                    <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm">
+                </div>
+                <!-- Current button -->
+                <div class="col-3">
+                    <button class="btn btn-success w-100" value="search" type="submit" id="current-location-button">
+                        Current
+                    </button>
+                </div>
+            </div>
+        </form>
+        <!-- End of form to search field -->
+
+        <!-- Todays temperature starts here -->
+        <h1 id="city"></h1>
+
+        <ul>
+            <li id="list-time"></li>
+            <li id="description"></li>
+        </ul>
+
+        <div class="row">
+            <div class="col-6">
+
+                <div class="clear-fix">
+                    <img src="assets/images/sun2.png" alt="cloudy-sun" class="weather-icon1">
+                    <span class="temperature" id="temperature">
+                    </span>
+                    <span class="units" id="change-units">
+                        <a href="#" id="celsius-link"> °C </a> | <a href="#" id="fahrenheit-link"> °F </a>
+                    </span>
+                </div>
+
+            </div>
+            <div class="col-6 weatherss">
+                <li>Humidity: <span id="humidity"></span>%</li>
+                <li>Wind: <span id="wind"></span>km/h</li>
+            </div>
+        </div>
+        <!-- Today's temperature ends here -->
+
+        <hr>
+        <!-- Forecast starts here -->
+
+        <div class="weather-forecast">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="forecaster">
+                        <div class="weather-forecast-date">Mon</div>
+                        <img src="assets/images/sun2.png" alt="weather icon" class="weather-icon">
+                        <div class="forecaster-temp">
+                            <span class="max-temp">34</span>
+                            <span class="min-temp">32</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-2">
+                    <div class="forecaster">
+                        <div class="weather-forecast-date">Tue</div>
+                        <img src="assets/images/sun2.png" alt="weather icon" class="weather-icon">
+                        <div class="forecaster-temp">
+                            <span class="max-temp">35</span>
+                            <span class="min-temp">23</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-2">
+                    <div class="forecaster">
+                        <div class="weather-forecast-date">Wed</div>
+                        <img src="assets/images/cloudss.png" alt="weather icon" class="weather-icon">
+                        <div class="forecaster-temp">
+                            <span class="max-temp">29</span>
+                            <span class="min-temp">26</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-2">
+                    <div class="forecaster">
+                        <div class="weather-forecast-date">Thu</div>
+                        <img src="assets/images/rainy-sunnyy.png" alt="weather icon" class="weather-icon">
+                        <div class="forecaster-temp">
+                            <span class="max-temp">25</span>
+                            <span class="min-temp">19</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-2">
+                    <div class="forecaster">
+                        <div class="weather-forecast-date">Fri</div>
+                        <img src="assets/images/rainy-sunnyy.png" alt="weather icon" class="weather-icon">
+                        <div class="forecaster-temp">
+                            <span class="max-temp">20</span>
+                            <span class="min-temp">26</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-2">
+                    <div class="forecaster">
+                        <div class="weather-forecast-date">Sat</div>
+                        <img src="assets/images/cloudss.png" alt="weather icon" class="weather-icon">
+                        <div class="forecaster-temp">
+                            <span class="max-temp">29</span>
+                            <span class="min-temp">26</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!-- forecast ends here -->
+
+    </div>
+
+    <!-- javascript link -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
