@@ -93,8 +93,8 @@ li {
 
 .units {
     position: relative;
-    top: -28px;
-    left: -5px;
+    top: 0;
+    left: 0;
 }
 
 .temperature {
