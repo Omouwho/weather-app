@@ -23,13 +23,15 @@ let days = [
 
 function displayWeatherCondition(response){
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${(response.data.weather[0].icon)}@2x.png`);
   iconElement.setAttribute("alt",  (response.data.weather[0].description));
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 
@@ -57,18 +59,43 @@ function getCurrentLocation(event){
 
 }
 
-function convertToFahrenheit(event){
+function displayFahrenheitTemperature(event){
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  // remove active class from celsius link
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9)/ 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-function convertToCelsius(event){
+function displayCelsiusTemperature(event){
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML =19;
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
 }
 
+
+// function convertToFahrenheit(event){
+//   event.preventDefault();
+//   let temperatureElement = document.querySelector("#temperature");
+//   temperatureElement.innerHTML = 66;
+// }
+
+// function convertToCelsius(event){
+//   event.preventDefault();
+//   let temperatureElement = document.querySelector("#temperature");
+//   temperatureElement.innerHTML =19;
+// }
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 
 
@@ -76,6 +103,9 @@ function convertToCelsius(event){
 let dateElement = document.querySelector("#list-time");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
+
+let celsiusTemperature = null;
+
 
 // Feature 2
 let searchForm = document.querySelector("#form");
@@ -85,20 +115,5 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 
+
 searchCity("Lagos");
-
-
-
-
-
-
-
-
-
-// Bonus Feature
-
-// let fahrenheitLink = document.querySelector("#fahrenheit-link");
-// fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-// let celsiusLink = document.querySelector("#celsius-link");
-// celsiusLink.addEventListener("click", convertToCelsius);

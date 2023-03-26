@@ -135,7 +135,11 @@ a:hover {
     padding-bottom: 129px;
 }
 
+.weather-temperature .active{
+    color: black;
+    cursor: default;
+}
 
-/* a:visited {
+.weather-temperature .active:hover{
    text-decoration: none;
-} */
+}
