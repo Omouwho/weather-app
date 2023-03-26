@@ -50,14 +50,14 @@ function handleSubmit(event){
 
 function searchLocation(position){
   let apiKey = "b1ffa750faa242739962f64fe0t9dod4";
-  `https://api.shecodes.io/weather/v1/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric&units=metric`
-  axios.get(apiUrl).then(displayWeatherCondition); 
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.longitude}&lat=${position.latitude}&appid=${apiKey}&units=metric`
+  axios.get(apiUrl).then(displayWeatherCondition);
 }
 
-function getCurrentLocation(event){
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(searchLocation);
 
+  function getCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 function displayFahrenheitTemperature(event){
@@ -102,6 +102,9 @@ searchForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+
+// let form = document.querySelector("#enter-city");
+// form.addEventListener("submit", findCity);
 
 
 searchCity("Lagos");
