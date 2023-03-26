@@ -22,6 +22,7 @@ let days = [
 }
 
 function displayWeatherCondition(response){
+  celsiusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
@@ -30,8 +31,6 @@ function displayWeatherCondition(response){
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${(response.data.weather[0].icon)}@2x.png`);
   iconElement.setAttribute("alt",  (response.data.weather[0].description));
-
-  celsiusTemperature = response.data.main.temp;
 }
 
 
@@ -77,19 +76,6 @@ function displayCelsiusTemperature(event){
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 
 }
-
-
-// function convertToFahrenheit(event){
-//   event.preventDefault();
-//   let temperatureElement = document.querySelector("#temperature");
-//   temperatureElement.innerHTML = 66;
-// }
-
-// function convertToCelsius(event){
-//   event.preventDefault();
-//   let temperatureElement = document.querySelector("#temperature");
-//   temperatureElement.innerHTML =19;
-// }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
