@@ -33,20 +33,18 @@
 
 <body>
     <div class="container">
-
         <!-- The form to submit a city starts here -->
         <form class="search-form" id="form">
             <div class="row">
-                <div class="col-9">
+                <div class="col-8">
                     <!-- input search field -->
                     <input type="search" placeholder=" 🔍 Type a city" autofocus="on" autocomplete="off"
-                        class="form-control shadow-sm" id="city-input">
+                        class="form-control shadow-sm" id="city-input" />
                 </div>
                 <!-- Search Button -->
-                <div class="col-3">
-                    <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm">
+                <div class="col-4">
+                    <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
                 </div>
-
             </div>
         </form>
         <!-- End of form to search field -->
@@ -54,43 +52,40 @@
         <!-- Todays temperature starts here -->
         <h1 id="city"></h1>
 
-        <ul>
+        <ul class="about">
             <li class="last">Last updated: <span id="list-time"></span></li>
             <li id="description"></li>
         </ul>
 
         <div class="row">
-            <div class="col-6">
-
+            <div class="col-5">
                 <div class="d-flex weather-temperature">
-                    <img src="" alt="cloudy-sun" class="weather-icon1" id="icon">
-                    <span class="temperature" id="temperature">
-                    </span>
+                    <img src="" alt="cloudy-sun" class="weather-icon1" id="icon" />
+                    <span class="temperature" id="temperature"> </span>
                     <span class="units" id="change-units">
-                        <a href="#" id="celsius-link" class="active"> °C </a> | <a href="#" id="fahrenheit-link"> °F
-                        </a>
+                        <a href="#" id="celsius-link" class="active"> °C </a> |
+                        <a href="#" id="fahrenheit-link"> °F </a>
                     </span>
                 </div>
-
             </div>
-            <div class="col-6 weatherss">
+            <div class="col-7 weatherss">
                 <li>Humidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span>km/h</li>
             </div>
         </div>
         <!-- Today's temperature ends here -->
 
-        <hr>
+        <hr />
 
         <!-- Forecast starts here -->
         <div class="weather-forecast" id="forecast"></div>
         <!-- forecast ends here-->
-
-
     </div>
 
-    <p class="source-code"><a href="https://github.com/Omouwho/weather-app" target="_blank">Open-sourcecode</a> by
-        Esther Omouwho</p>
+    <p class="source-code">
+        <a href="https://github.com/Omouwho/weather-app" target="_blank">Open-sourcecode</a>
+        by Esther Omouwho
+    </p>
 
 
 
