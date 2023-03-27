@@ -10,7 +10,8 @@ current-weather-icon {
 img {
     vertical-align: middle;
     border-style: none;
-    width: 95px;
+    width: 50px;
+    height: 56px;
 }
 
 h1 {
@@ -91,7 +92,7 @@ li::first-letter {
 }
 
 .weather-icon {
-    width: 25px;
+    width: 5px;
 }
 
 .weather-icon1 {
