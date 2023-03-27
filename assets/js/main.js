@@ -56,7 +56,6 @@ forecastHTML = forecastHTML + `
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let longitude = coordinates.longitude;
   let latitude = coordinates.latitude;
   let apiKey = "b1ffa750faa242739962f64fe0t9dod4";
@@ -67,7 +66,6 @@ function getForecast(coordinates) {
 
 
 function displayTemperature(response){
-     console.log(response.data);
   celsiusTemperature = response.data.temperature.current;
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
@@ -125,16 +123,11 @@ fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
-
-
-// Feature 1
 let dateElement = document.querySelector("#list-time");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
 
-
-// Feature 2
 let searchForm = document.querySelector("#form");
 searchForm.addEventListener("submit", handleSubmit);
 
