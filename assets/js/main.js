@@ -92,6 +92,7 @@ function handleSubmit(event){
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
   searchCity(city);
+  document.querySelector("#city-input").value = "";
 }
 
 
