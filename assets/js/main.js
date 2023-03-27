@@ -21,7 +21,7 @@ let days = [
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayWeatherCondition(response){
+function displayTemperature(response){
      console.log(response.data);
   celsiusTemperature = response.data.temperature.current;
   document.querySelector("#city").innerHTML = response.data.city;
@@ -39,7 +39,7 @@ function displayWeatherCondition(response){
 function searchCity(city){
   let apiKey = "b1ffa750faa242739962f64fe0t9dod4";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeatherCondition); 
+  axios.get(apiUrl).then(displayTemperature); 
 }
 
 function handleSubmit(event){
@@ -48,17 +48,6 @@ function handleSubmit(event){
   searchCity(city);
 }
 
-function searchLocation(position){
-  let apiKey = "b1ffa750faa242739962f64fe0t9dod4";
-  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${position.longitude}&lat=${position.latitude}&appid=${apiKey}&units=metric`
-  axios.get(apiUrl).then(displayWeatherCondition);
-}
-
-
-  function getCurrentLocation(event) {
-    event.preventDefault();
-    navigator.geolocation.getCurrentPosition(searchLocation);
-}
 
 function displayFahrenheitTemperature(event){
   event.preventDefault();
@@ -98,13 +87,6 @@ let celsiusTemperature = null;
 // Feature 2
 let searchForm = document.querySelector("#form");
 searchForm.addEventListener("submit", handleSubmit);
-
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
-
-
-// let form = document.querySelector("#enter-city");
-// form.addEventListener("submit", findCity);
 
 
 searchCity("Lagos");
