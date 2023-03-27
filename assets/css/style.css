@@ -148,3 +148,7 @@ a:hover {
 .weatherss {
     padding-left: 55px;
 }
+
+.forecaster-temp{
+    font-size: 12px;
+}

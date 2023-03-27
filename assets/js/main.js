@@ -21,8 +21,32 @@ let days = [
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+let days =["Mon", "Tue", "Wed"];
+days.forEach(function(day){
+forecastHTML = forecastHTML + `
+                  <div class="col-sm-2">
+                    <div class="forecaster">
+                        <div class="weather-forecast-date">${day}</div>
+                        <img src="assets/images/sun2.png" alt="weather icon" class="weather-icon">
+                        <div class="forecaster-temp">
+                            <span class="max-temp">34°</span>
+                            <span class="min-temp">32°</span>
+                        </div>
+                    </div>
+                </div>`;
+
+})
+                forecastHTML = forecastHTML + `</div>`;
+                forecastElement.innerHTML = forecastHTML;
+}
+
+
 function displayTemperature(response){
-     console.log(response.data);
+    //  console.log(response.data);
   celsiusTemperature = response.data.temperature.current;
   document.querySelector("#city").innerHTML = response.data.city;
   document.querySelector("#temperature").innerHTML = Math.round(celsiusTemperature);
@@ -68,6 +92,9 @@ function displayCelsiusTemperature(event){
 
 }
 
+let celsiusTemperature = null;
+
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
@@ -81,7 +108,6 @@ let dateElement = document.querySelector("#list-time");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
-let celsiusTemperature = null;
 
 
 // Feature 2
@@ -90,3 +116,4 @@ searchForm.addEventListener("submit", handleSubmit);
 
 
 searchCity("Lagos");
+displayForecast()
