@@ -18,6 +18,7 @@ h1 {
     color: #092238;
     font-size: 35px;
     font-weight: 600;
+    padding-left: 4px;
 }
 
 h2 {
@@ -164,31 +165,40 @@ a:hover {
     img {
         vertical-align: middle;
         }
+
     div {
         display: inline;
         }
+
     h1 {
         font-size: 25px;
-        text-align: center;
+        text-align: left;
         }
+
+   body {
+       margin: 12px;
+       font-size: 100%;
+   }
+
     #description {
-        text-align: center;
+        text-align: left;
         font-size: 15px;
         }
 
-        #city-input{
+    #city-input{
             margin-left: 10px;
         }
 
-        #search-btn{
+    #search-btn{
             margin: 0 -9px;
         }
 
     .temperature {
     font-size: 60px;
         }
-     .last {
-        text-align: center;
+
+    .last {
+        text-align: left;
         font-size: 15px;
         }
 
@@ -197,22 +207,16 @@ a:hover {
        top: 1px;
        left: -6px;
        display: flex;
-   }
+       }
 
    .col-2{
     display: flex;
-
-   }
+       }
 
    .container{
     padding: 0;
     margin: 0;
     box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
-}
-
-   body {
-    margin: 12px;
-    font-size: 100%;
-}
-   
+    border: 1px solid rgb(133, 128, 128);
+      }
 }
